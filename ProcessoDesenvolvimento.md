@@ -1,5 +1,12 @@
 # Processo de Desenvolvimento
 
+### Commit 4
+O commit anterior foi muito básico, mas um bom ponto de partida. Agora podemos deixar ele mais geral.
+Obviamente, existem muitas entradas possíveis para a rotação, a princípio todos os 26 caracteres. Podemos fazer isso facilmente no Spock.
+E fazendo o teste rapidamente notamos o erro. Simplesmente somar 3 não resolve o problema, pois os últimos caracteres saem do "alcance" dos caracteres.
+Logo, devemos fazer uma alteração na função para contemplar esses casos. A sacada é que como o teste contempla o funcionamento até o momento, não é preciso ter medo de alterar a função, os testes existentes garantem seu funcionamento.
+Após a alteração (em caso de dúvidas, consultar as fontes sobre a cifra) os testes passam para todo o alfabeto.
+
 ### Commit 3
 Criação do projeto em Java com testes em groovy (utilizando o framework Spock).
 Com o design estratégico elaborado, devemos começar a implementação elaborando nosso primeiro teste!
