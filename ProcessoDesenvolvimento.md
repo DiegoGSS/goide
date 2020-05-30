@@ -1,5 +1,12 @@
 # Processo de Desenvolvimento
 
+### Commit 5
+Tudo parece lindo e feliz, você deixa seu código na máquina e vai tomar café com seus colegas. E eis que falando com eles no café sobre como você progrediu rápido você percebe um deslize. Um erro falta. o alfabeto também possui letras MAIÚSCULAS não é mesmo?
+Enfim, isso precisa ser resolvido. E faremos da mesma forma: adicionando testes e refatorando a classe existente.
+Nesse caso achei melhor montar outro teste para deixar bem claro que os dois casos são um pouco diferentes e para facilitar a leitura.
+Adicionando um if na classe de rotação, o problema é resolvido.
+E, como esperado, os testes antigos continuam funcionando.
+
 ### Commit 4
 O commit anterior foi muito básico, mas um bom ponto de partida. Agora podemos deixar ele mais geral.
 Obviamente, existem muitas entradas possíveis para a rotação, a princípio todos os 26 caracteres. Podemos fazer isso facilmente no Spock.
