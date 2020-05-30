@@ -2,7 +2,6 @@ import spock.lang.*
 
 class CharacterCoderTest extends Specification {
 
-    //alterando nome do teste
     def "Lowercase character input should be cyphered to character +3"() {
         expect:
         CharacterCoder coder = new CharacterCoder();
@@ -21,7 +20,6 @@ class CharacterCoderTest extends Specification {
 
     }
 
-    //adicionando teste das maisuculas
     def "Uppercase character input should be cyphered to character +3"() {
         expect:
         CharacterCoder coder = new CharacterCoder();
