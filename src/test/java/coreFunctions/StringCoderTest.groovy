@@ -19,5 +19,17 @@ class StringCoderTest extends Specification {
 
     }
 
+    //demonstracao para seu amigo
+    def "Demonstration" (){
+        expect:
+        StringCoder coder = new StringCoder();
+        String coded = coder.codeString(original);
+        coded == rotated;
+
+        where:
+        original << ['Hello World']
+        rotated << ['Khoor Zruog']
+    }
+
 
 }

@@ -1,5 +1,13 @@
 # Processo de Desenvolvimento
 
+### Commit 8
+Novamente você está feliz tomando seu café na firma falando sobre seu novo programa. E as pessoas gostam tanto que você faz uma demonstração em sua mesa. Logo seu amigo sugere o texto: `Hello World`. Mais simples impossível você pensa. Eis que você roda seu código e consegue o resultado: `Khoor=Zruog`. OH NÃO, DEU ERRADO. Risadas de um lado, frustração de outro, o programa quase funcionou. Mas claro, você deve ter percebido, você esqueceu de testar os caracteres especiais!  E como resolver isso? Claro, mais testes.
+Nesse caso, é bom pesquisar a tabela ASCII para entender melhor como funciona a codificação de caracteres em números. Feito isso, é importante elaborar um teste com alguns exemplos, que contemple caracteres especiais que vem antes e depois das letras na tabela e também entre as maiúsculas e minúsculas; a princípio não é necessário testar *todos* os caracteres.
+Novamente, primeiro montamos o teste na classe "CharacterCoderTest", com 2 exemplos de cada região onde não há letras na tabela.
+Em seguida, alteramos o código da classe para contemplar os caracteres especiais. Mudanças em ifs são sempre sensíveis e muito propícias a erros, mas aqui podemos fazer as alterações com confiança, pois nossos testes cobrem os casos de sucesso anteriores.
+Feita a mudança tanto os novos testes como a demonstração para seu amigo funcionam.
+PS: o teste não é feito direto na API apenas para facilitar o exemplo :).
+
 ### Commit 7 
 Se voltarmos ao design estratégico, vemos que a funcionalidade de criptografar um texto usando a cifra de César está pronta! Portanto é um ótimo momento para adicionarmos uma função e classe de API, que possam ser o ponto de entrada no nosso código. Tecnicamente, poderíamos usar o que já temos, mas a ideia é expormos para fora apenas o que for interessante para o usuário.
 Novamente, podemos começar com um teste CesarCypherTest igual ao do coreFunctions.StringCoderTest apenas para o exemplo básico.

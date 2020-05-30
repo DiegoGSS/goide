@@ -39,4 +39,17 @@ class CharacterCoderTest extends Specification {
                     (char) 'B', (char) 'C']
 
     }
+
+    def "Special character input should NOT be rotated"() {
+        expect:
+        CharacterCoder coder = new CharacterCoder();
+        char coded = coder.characterRotator(original);
+        coded == rotated;
+
+        where:
+        //teste com dois exemplos de caracteres especiais de cada região a tabela ascii sem letras
+        original << [(char) ' ', (char) '!', (char) '[', (char) '_', (char) '{', (char) '|']
+        rotated << [(char) ' ', (char) '!', (char) '[',  (char) '_', (char) '{', (char) '|']
+
+    }
 }
