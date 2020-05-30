@@ -1,3 +1,5 @@
+package coreFunctions;
+
 public class CharacterCoder {
 
     public char characterRotator(char inputChar){

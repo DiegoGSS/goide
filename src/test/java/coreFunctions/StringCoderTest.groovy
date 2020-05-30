@@ -1,3 +1,5 @@
+package coreFunctions
+
 import spock.lang.*
 
 class StringCoderTest extends Specification {

@@ -1,3 +1,5 @@
+package coreFunctions
+
 import spock.lang.*
 
 class CharacterCoderTest extends Specification {

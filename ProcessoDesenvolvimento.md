@@ -1,9 +1,16 @@
 # Processo de Desenvolvimento
 
+### Commit 7 
+Se voltarmos ao design estratégico, vemos que a funcionalidade de criptografar um texto usando a cifra de César está pronta! Portanto é um ótimo momento para adicionarmos uma função e classe de API, que possam ser o ponto de entrada no nosso código. Tecnicamente, poderíamos usar o que já temos, mas a ideia é expormos para fora apenas o que for interessante para o usuário.
+Novamente, podemos começar com um teste CesarCypherTest igual ao do coreFunctions.StringCoderTest apenas para o exemplo básico.
+Como sempre, criamos o teste para falhar, depois criamos a classe e finalmente o teste passa.
+Vamos também aproveitar para isolar o nosso código interno em uma pasta separada, já começando a pensar no isolamento entre as partes. Num momento futuro, podemos acertar isso de forma definitiva.
+E, finalmente, como nosso teste da API é preliminar, podemos, por hora, testar apenas um caso bastante simples.
+
 ### Commit 6
 Finalmente, com nossa função de rotação robusta vamos fazer uma função que consiga montar um texto cifrado!
 Primeiro, faremos um teste adequado. No primeiro momento vamos utilizar outra classe, já que definimos a nossa classe inicial como um manipulador de caracteres.
-StringCoderTest é a nossa classe de testes e usamos apenas um texto simples `cesar` que deve ser transformado em `fhvdu`. O teste basicamente verifica o funcionamento correto do for e que a função "CharacterCoder.characterRotator" é chamada corretamente.
+coreFunctions.StringCoderTest é a nossa classe de testes e usamos apenas um texto simples `cesar` que deve ser transformado em `fhvdu`. O teste basicamente verifica o funcionamento correto do for e que a função "coreFunctions.CharacterCoder.characterRotator" é chamada corretamente.
 Após fazer o teste e a classe, vemos que o teste passa.
 Se rodarmos uma ferramente de Code Coverage (como a do IntelliJ), veremos que estamos com cobertura de 100%, um bom sinal de que os testes estão indo bem.
 
@@ -27,8 +34,8 @@ Com o design estratégico elaborado, devemos começar a implementação elaboran
 Começaremos pelo problema mais simples (cifra de César), pelo ponto mais básico dela (rotação de um caractere por 3 posições).
 E, finalmente, faremos o teste mais simples possível para começar: nossa função deve receber um caractere 'a' e retornar um 'd'.
 O teste parece básico demais, mas é a melhor forma de começarmos. 
-Prmeiro fazemos o teste e deixamos ele falhar, classe: `CharacterCoderTest.groovy`.
-Depois elaboramos a classe e a função do teste: `CharacterCoder.java`.
+Prmeiro fazemos o teste e deixamos ele falhar, classe: `coreFunctions.CharacterCoderTest.groovy`.
+Depois elaboramos a classe e a função do teste: `coreFunctions.CharacterCoder.java`.
 Feito isso, o teste passa e o primeiro passo está pronto.
 
 ### Commit 2

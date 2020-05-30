@@ -14,7 +14,7 @@ Descriptogragar:
 
 **César**
 Criptografar:
-- Para cada caractere do texto
-- - Aplicar rotacional ao caractere
+- Para cada caractere do texto OK
+- - Aplicar rotacional ao caractere OK
 Descriptogragar:
 - Processo inverso do acima
