@@ -1,3 +1,4 @@
+import CesarCypher.CesarCypher
 import spock.lang.*
 
 class CesarCypherTest extends Specification {

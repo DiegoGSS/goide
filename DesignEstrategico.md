@@ -13,7 +13,7 @@ Descriptogragar:
 - Processo inverso do acima
 
 **César**
-Criptografar:
+Criptografar: OK
 - Para cada caractere do texto OK
 - - Aplicar rotacional ao caractere OK
 Descriptogragar:

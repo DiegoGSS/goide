@@ -1,5 +1,20 @@
 # Processo de Desenvolvimento
 
+### Commit 9 
+Se olharmos agora nosso design estratégico, veremos que a parte de criptografia está bascaimente pronta. Poderíamos de cara partir para a descriptografia, mas vamos tomar outra estratégia.
+Neste commit já montaremos uma aplicação de console capaz de criptografar texto utilizando a cifra de César. Faremos isso pensando na ideia de já fazermos uma pequena entrega de valor um produto mínimo que já resolve um dos sub-problemas do nosso problema 1.
+Nisso nos encontramos com alguns pontos importantes.
+- Até o momento, focamos em [testes unitários](https://en.wikipedia.org/wiki/Unit_testing). Agora, com o desenvolvimento da aplicação de console não faz muito sentido elaborar um teste unitário, mas sim um teste de integração, capaz de testar o input e output do programa, passando pelas classes internas de criptografia.
+- Testes de integração são mais custosos que os unitários, portanto não é viável testar todos os casos possíveis. Nesse caso ainda, como não temos requisitos muito claros e temos uma aplicação que ainda pode variar muito, vamos tomar uma terceria estratégia: a dos testes manuais.
+- Com o tempo, poderemos alocar recursos para fazer testes automatizados de integração ou até de interface, de acordo com os requisitos, necessidades e usos mais críticos do cliente.
+- Além dos testes, será necessário criar um módulo para a aplicação de console e isolar nossas classes de criptografia em outro módulo. Dessa forma, isolaremos a interface com o usuário da implementação dos algoritmos e será mais fácil elaborar outras formas de interface. Além disso, será possível também utilizar o módulo com os algoritmos como uma biblioteca.
+
+Então, vamos ao trabalho!
+1. Primeiro, passamos o nosso código atual para o novo módulo interno, nossa biblioteca `goide-core`.
+2. Elaboramos um plano de testes manuais descrito no arquivo `PlanoTestesManuais.md` para nossa aplicação console. Faremos um plano bem simples, dado que é uma primeira entrega e que a interface ainda não foi bem definida.
+3. Feito isso (os testes manuais não passam) faremos a aplicação console no novo módulo `goide-console-app`.
+4. Com tudo feito, executaremos os testes manuais para garantir que eles resultam em sucesso.
+
 ### Commit 8
 Novamente você está feliz tomando seu café na firma falando sobre seu novo programa. E as pessoas gostam tanto que você faz uma demonstração em sua mesa. Logo seu amigo sugere o texto: `Hello World`. Mais simples impossível você pensa. Eis que você roda seu código e consegue o resultado: `Khoor=Zruog`. OH NÃO, DEU ERRADO. Risadas de um lado, frustração de outro, o programa quase funcionou. Mas claro, você deve ter percebido, você esqueceu de testar os caracteres especiais!  E como resolver isso? Claro, mais testes.
 Nesse caso, é bom pesquisar a tabela ASCII para entender melhor como funciona a codificação de caracteres em números. Feito isso, é importante elaborar um teste com alguns exemplos, que contemple caracteres especiais que vem antes e depois das letras na tabela e também entre as maiúsculas e minúsculas; a princípio não é necessário testar *todos* os caracteres.

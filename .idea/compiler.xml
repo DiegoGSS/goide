@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="goide" />
+        <module name="goide-console-app" />
+        <module name="goide-core" />
       </profile>
     </annotationProcessing>
   </component>
