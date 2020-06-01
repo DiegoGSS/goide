@@ -1,5 +1,10 @@
 # Processo de Desenvolvimento
 
+### Commit 10
+Agora, feita a primeira entrega chegou o momento ideal de implementar a outra funcionalidade da cifra de Cesar a de descriptografar!... ou seria o momento ideal, caso não fosse detectado um débito técnico no código. Nesse commit resolveremos esse débito para ficarmos mais prontos para a implementação da nova funcionalidade.
+Basicamente o teste da classe `CesarCypherTest` não é unitário e sim integrado. Isso não parece muito problemático, pois o sistema é pequeno, mas se o teste envolvesse mais de 10 classes os efeitos seriam sentidos. O ideal nesse caso é fazer um teste unitário que apenas garante que a classe chama corretamente as funções utilizadas e que ela sabe lidar com seus resultados. Isso pode se tornar mais interessante caso no futuro essa função além de chamar as funções internas, processe os textos por exemplo.
+Fazemos o teste, uma pequena alteração na classe para permitir os testes com mock e sucesso!
+
 ### Commit 9 
 Se olharmos agora nosso design estratégico, veremos que a parte de criptografia está bascaimente pronta. Poderíamos de cara partir para a descriptografia, mas vamos tomar outra estratégia.
 Neste commit já montaremos uma aplicação de console capaz de criptografar texto utilizando a cifra de César. Faremos isso pensando na ideia de já fazermos uma pequena entrega de valor um produto mínimo que já resolve um dos sub-problemas do nosso problema 1.

@@ -1,18 +1,30 @@
 import CesarCypher.CesarCypher
+import coreFunctions.StringCoder
 import spock.lang.*
 
 class CesarCypherTest extends Specification {
 
-    //teste basico bem basico da api
-    def "Simple text of CesarCypher"() {
-        expect:
-        CesarCypher cesarCypher = new CesarCypher();
-        String coded = cesarCypher.cypherText(original);
-        coded == rotated;
+    StringCoder mockedStringCoder;
+    CesarCypher cesarCypher;
 
-        where:
-        original << ['cesar']
-        rotated << ['fhvdu']
+    def setup() {
+        mockedStringCoder = Mock(StringCoder)
+        cesarCypher = new CesarCypher()
+        cesarCypher.setStringCoder(mockedStringCoder)
+    }
+
+    //teste basico bem basico da api, agora usando mock e verdadeiramente unitario
+    def "Simple test of CesarCypher"() {
+        given:
+        def original = 'cesar'
+        def expected = 'fhvdu'
+
+        when:
+        def output = cesarCypher.cypherText(original);
+
+        then:
+        1 * mockedStringCoder.codeString(original) >> expected
+        output == expected
 
     }
 
