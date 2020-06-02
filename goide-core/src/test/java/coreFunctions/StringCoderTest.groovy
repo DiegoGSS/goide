@@ -19,6 +19,18 @@ class StringCoderTest extends Specification {
 
     }
 
+    def "Simple text should be decyphered rotating characters by 3"() {
+        expect:
+        StringCoder coder = new StringCoder();
+        String coded = coder.decodeString(original);
+        coded == rotated;
+
+        where:
+        original << ['fhvdu']
+        rotated << ['cesar']
+
+    }
+
     //demonstracao para seu amigo
     def "Demonstration" (){
         expect:

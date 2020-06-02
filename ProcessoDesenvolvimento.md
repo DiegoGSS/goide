@@ -1,5 +1,12 @@
 # Processo de Desenvolvimento
 
+### Commit 11
+Agora finalmente começaremos a funcionalidade de decifrar. Como sempre, começaremos pelos testes.
+1. Elaboramos os testes da rotação reversa dos caracteres (incluindo minúsculas, maiúsculas e caracteres especiais).
+2. Criamos a função nova e refatoramos a classe original: `CharacterCoder`.
+3. Elaboramos os testes da rotação reversa de sintrg de exemplo na classe `StringCoderTest` e implementamos a funcionalidade na classe.
+4. Finalmente elaboramos os testes com mock na classe `CesarCypherTest` e finalizamos a API.
+
 ### Commit 10
 Agora, feita a primeira entrega chegou o momento ideal de implementar a outra funcionalidade da cifra de Cesar a de descriptografar!... ou seria o momento ideal, caso não fosse detectado um débito técnico no código. Nesse commit resolveremos esse débito para ficarmos mais prontos para a implementação da nova funcionalidade.
 Basicamente o teste da classe `CesarCypherTest` não é unitário e sim integrado. Isso não parece muito problemático, pois o sistema é pequeno, mas se o teste envolvesse mais de 10 classes os efeitos seriam sentidos. O ideal nesse caso é fazer um teste unitário que apenas garante que a classe chama corretamente as funções utilizadas e que ela sabe lidar com seus resultados. Isso pode se tornar mais interessante caso no futuro essa função além de chamar as funções internas, processe os textos por exemplo.

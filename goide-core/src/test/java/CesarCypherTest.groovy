@@ -13,8 +13,8 @@ class CesarCypherTest extends Specification {
         cesarCypher.setStringCoder(mockedStringCoder)
     }
 
-    //teste basico bem basico da api, agora usando mock e verdadeiramente unitario
-    def "Simple test of CesarCypher"() {
+    //teste basico bem basico da api, agora usando mock e verdadeiramente unitario e de cypher
+    def "Simple test of CesarCypher, to cypher test"() {
         given:
         def original = 'cesar'
         def expected = 'fhvdu'
@@ -24,6 +24,21 @@ class CesarCypherTest extends Specification {
 
         then:
         1 * mockedStringCoder.codeString(original) >> expected
+        output == expected
+
+    }
+
+    //teste basico bem basico da api, agora usando mock e verdadeiramente unitario
+    def "Simple test of CesarCypher to decypher test"() {
+        given:
+        def original = 'fhvdu'
+        def expected = 'cesar'
+
+        when:
+        def output = cesarCypher.decypherText(original);
+
+        then:
+        1 * mockedStringCoder.decodeString(original) >> expected
         output == expected
 
     }
