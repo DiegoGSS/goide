@@ -1,5 +1,11 @@
 # Processo de Desenvolvimento
 
+### Commit 12
+Agora para finalizar o trabalho do último commit, vamos adicionar a possibilidade decodificação na nossa Console Application.
+Faremos a mesma estratégia anterior de testes manuais, listando os testes no arquivo: `PlanoTestesManuais.md`.
+Como usual, primeiro montamos os testes e depois o código.
+Após os testes passarem, o código está pronto!
+
 ### Commit 11
 Agora finalmente começaremos a funcionalidade de decifrar. Como sempre, começaremos pelos testes.
 1. Elaboramos os testes da rotação reversa dos caracteres (incluindo minúsculas, maiúsculas e caracteres especiais).
