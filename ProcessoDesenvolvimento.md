@@ -1,5 +1,18 @@
 # Processo de Desenvolvimento
 
+### Commit 13
+Agora, com a cifra de Cesar 100% implementada podemos finalmente partir para a cifra de Vigènere.
+Nesse commit faremos a primeira etapa, que é permitir valores diferentes para a rotação do número (hoje apenas permitimos rotação 3).
+A estratégia será a seguinte:
+- Em termos de codificação, temos testes para todas as possibilidades com rotação 3.
+- Agora vamos testar a rotação de um caractere específico de todos os valores possíveis.
+- Como os testes devem ser "composable" com isso nós cobriremos todos os casos, não é necessário testar todas as combinações de caracteres e valores de rotação.
+Agora vamos aos passos de implementação:
+1. Elaboramos os testes rotacionando um char minusculo de todos os fatores válidos (outros chars).
+2. Fazemos o mesmo para rotacionar o char maiúsculo.
+3. Finalmente fazemos o teste com caracteres especiais com um fator de rotação arbitrário.
+4. Também fazemos um refactor para melhorar os nomes dos métodos e manter o método específico de César na API, pois ele será usado especificamente
+
 ### Commit 12
 Agora para finalizar o trabalho do último commit, vamos adicionar a possibilidade decodificação na nossa Console Application.
 Faremos a mesma estratégia anterior de testes manuais, listando os testes no arquivo: `PlanoTestesManuais.md`.
