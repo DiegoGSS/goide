@@ -43,5 +43,20 @@ class StringCoderTest extends Specification {
         rotated << ['Khoor Zruog']
     }
 
+    //primeiro fazemos o teste
+    //esse teste deve ser sucifiente dados os testes de rotacao de caracteres e iteracao de strings
+    def "Simple text should be cyphered rotating characters by according to key"() {
+        expect:
+        StringCoder coder = new StringCoder();
+        String coded = coder.codeString(original, key);
+        coded == rotated;
+
+        where:
+        original << ['cesar']
+        key << ['cesar']
+        rotated << ['eikai']
+
+    }
+
 
 }

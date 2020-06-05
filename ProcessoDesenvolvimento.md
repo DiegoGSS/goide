@@ -1,5 +1,14 @@
 # Processo de Desenvolvimento
 
+### Commit 14
+Agora, devemos incrementar a evolução do último commit permitindo que a rotação ocorra não apenas em caracteres, mas em Strings.
+1. Primeiro elaboramos os novos testes para nossa classe `StringCoder`.
+2. Em seguida, conforme começamos a implementar o código da classe, notamos a necessidade de criar um iterador de strings para simplificar e encapsular a lógica de iteração no string do texto e da chave.
+3. Assim, elaboramos os testes novos na classe `BeautifulStringTest` (sim, nosso novo string é o `BeautifulString`).
+4. Implementamos a classe nova e fazemos ela passar pelos testes.
+5. Agora, voltamos a `StringCoder` e implementamos a nova função utilizando o `BeautifulString`.
+6. Feita a função nova, e passados os testes, mais uma etapa está finalizada.
+
 ### Commit 13
 Agora, com a cifra de Cesar 100% implementada podemos finalmente partir para a cifra de Vigènere.
 Nesse commit faremos a primeira etapa, que é permitir valores diferentes para a rotação do número (hoje apenas permitimos rotação 3).
