@@ -8,18 +8,21 @@ public class BeautifulString {
     private String word;
     private int index;
     private int laps;
+    private char currentChar;
 
     public BeautifulString(String word){
         this.word = word;
         this.index = 0;
         this.laps = 0;
+        this.currentChar = ' ';
     }
 
     public char iterate(){
         char character;
         character = word.charAt(index);
         updateIndex();
-        return character;
+        this.currentChar = character;
+        return this.currentChar;
     }
 
     private void updateIndex(){
@@ -38,6 +41,10 @@ public class BeautifulString {
 
     public boolean hasLaps(){
         return this.laps > 0;
+    }
+
+    public char getCurrentChar(){
+        return this.currentChar;
     }
 
 }

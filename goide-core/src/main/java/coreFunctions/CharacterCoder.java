@@ -1,5 +1,7 @@
 package coreFunctions;
 
+import Utils.CharacterUtils;
+
 public class CharacterCoder {
 
     //mantemos esse metodo na API por ser notável e especialmente útil
@@ -15,7 +17,7 @@ public class CharacterCoder {
         //obtendo fator de rotacao
         int rotationFactor = getRotationNumber(rotationChar);
         //adicionando if para caracteres especiais
-        if(inputChar < 'A' || inputChar > 'z' || (inputChar > 'Z' && inputChar < 'a')){
+        if(CharacterUtils.isSpecialCharacter(inputChar)){
             rotated = inputChar;
         }
         //adicionando if para letras maiusculas

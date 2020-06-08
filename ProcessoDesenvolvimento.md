@@ -1,5 +1,10 @@
 # Processo de Desenvolvimento
 
+### Commit 16
+Com o Rot feito, finalmente faremos nossa classe de `VigenereCypher`. Manteremos os mesmos passos de sempre, torcendo para não termos mais problemas nos testes :).
+Nesse caso, precisamos fazer mais uma correção: a chave não pode ser rotacionada quando os caracteres do texto são especiais.
+Resolvendo isso os testes passam e finalizamos mais uma etapa.
+
 ### Commit 15
 Agora, devemos criar uma classe pré Vigènere que permite a rotação de um texto por 'n' caracteres. Como sempre, começamos pelo teste, implementamos a classe e fazemos com que os testes passem. E, como no caso da `CesarCypherTest`, fazemos os mocks para testar a API sem retestar a aplicação.
 Fazemos também um teste integrado simples, como demonstração e para garantir de forma simples todo o fluxo.

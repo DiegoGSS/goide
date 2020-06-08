@@ -58,5 +58,19 @@ class StringCoderTest extends Specification {
 
     }
 
+    //teste para garantir que a chave não roda quando o caractere do texto é especial
+    def "Text with special characters should be correctly cyphered"() {
+        expect:
+        StringCoder coder = new StringCoder();
+        String coded = coder.codeString(original, key);
+        coded == rotated;
+
+        where:
+        original << ['teste com caractere especial']
+        key << ['ridim']
+        rotated << ['kmvbq twp kmiifbqim habvklix']
+
+    }
+
 
 }

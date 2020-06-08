@@ -1,6 +1,7 @@
 package coreFunctions;
 
 import Utils.BeautifulString;
+import Utils.CharacterUtils;
 
 public class StringCoder {
 
@@ -34,7 +35,12 @@ public class StringCoder {
         BeautifulString inputBeautifulString = new BeautifulString(inputText);
         BeautifulString keyBeautifulString = new BeautifulString(key);
         while(!inputBeautifulString.hasLaps()){
-            outputString+= this.characterCoder.codeCharacter(inputBeautifulString.iterate(), keyBeautifulString.iterate());
+            if(CharacterUtils.isSpecialCharacter(inputBeautifulString.iterate())){
+                outputString+= this.characterCoder.codeCharacter(inputBeautifulString.getCurrentChar(), keyBeautifulString.getCurrentChar());
+            }
+            else{
+                outputString+= this.characterCoder.codeCharacter(inputBeautifulString.getCurrentChar(), keyBeautifulString.iterate());
+            }
         }
         return outputString;
     }
