@@ -6,7 +6,7 @@ public class CharacterCoder {
     //mas encapsulamos a lógica de codificação para evitar repetição de código
     public char cesarCodeCharacter(char inputChar){
         //rotacao cesar é de tres caracteres, equivalente a um caracter 'c'
-        return this.codeCharacter(inputChar, 'c');
+        return this.codeCharacter(inputChar, 'd');
     }
 
     //novo metodo da api para rotacao com fator
@@ -50,10 +50,10 @@ public class CharacterCoder {
             return 0;
         }
         else if(rotationChar <= 'Z'){
-            return (rotationChar - 'A' + 1) %26;
+            return (rotationChar - 'A') %26;
         }
         else {
-            return (rotationChar - 'a' + 1) %26;
+            return (rotationChar - 'a') %26;
         }
     }
 

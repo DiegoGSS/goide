@@ -6,9 +6,9 @@ Analisando o algoritmo da cifra de Vigenère (pode ser na Wikipedia mesmo) perce
 
 **Vigènere**
 Criptografar:
-- Para cada caractere do texto
-- - Determinar valor do rotacional pela chave
-- - Aplicar rotacional ao caractere
+- Para cada caractere do texto OK
+- - Determinar valor do rotacional pela chave OK
+- - Aplicar rotacional ao caractere OK
 Descriptogragar:
 - Processo inverso do acima
 

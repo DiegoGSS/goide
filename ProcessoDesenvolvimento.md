@@ -1,5 +1,19 @@
 # Processo de Desenvolvimento
 
+### Commit 15
+Agora, devemos criar uma classe pré Vigènere que permite a rotação de um texto por 'n' caracteres. Como sempre, começamos pelo teste, implementamos a classe e fazemos com que os testes passem. E, como no caso da `CesarCypherTest`, fazemos os mocks para testar a API sem retestar a aplicação.
+Fazemos também um teste integrado simples, como demonstração e para garantir de forma simples todo o fluxo.
+MAS OH NÃO, ALGO DEU ERRADO. O resultado esperado não corresponde ao obtido. O que pode ter dado errado?
+Se observarmos bem, veremos que o problema é que estamos considerando o 'a' como rotação de valor 1, quando na verdade o 'a' significa rotação 0.
+E por que esse erro chegou até aqui? Simples, os testes estavam errados.
+**Aqui fica uma lição essencial do TDD: o centro do desenvolvimento fica nos testes. Portanto, eles devem ser feitos com muito cuidado e validados em si. Erros nos testes acarretam quase que necessariamente em erro na aplicação.**
+Bom, está na hora de resolver os problemas:
+1. Corrigimos os testes errados na classe `CharacterCoderTest`.
+2. Corrigimos a classe `CharactedCoder`para que os testes passem.
+3. Repetimos o processo para a classe `StringCoder`.
+4. Repetimos o processo para a classe `RotCypher`.
+Feito tudo isso, finalmente esta etapa está finalizada.
+
 ### Commit 14
 Agora, devemos incrementar a evolução do último commit permitindo que a rotação ocorra não apenas em caracteres, mas em Strings.
 1. Primeiro elaboramos os novos testes para nossa classe `StringCoder`.
