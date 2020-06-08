@@ -7,7 +7,7 @@ public class CharacterCoder {
     //mantemos esse metodo na API por ser notável e especialmente útil
     //mas encapsulamos a lógica de codificação para evitar repetição de código
     public char cesarCodeCharacter(char inputChar){
-        //rotacao cesar é de tres caracteres, equivalente a um caracter 'c'
+        //rotacao cesar é de tres caracteres, equivalente a um caracter 'd'
         return this.codeCharacter(inputChar, 'd');
     }
 
@@ -30,18 +30,27 @@ public class CharacterCoder {
         return rotated;
     }
 
-    public char decodeCharacter(char inputChar){
+    //mantemos esse metodo na API por ser notável e especialmente útil
+    //mas encapsulamos a lógica de codificação para evitar repetição de código
+    public char cesarDecodeCharacter(char inputChar){
+        //rotacao cesar é de tres caracteres, equivalente a um caracter 'd'
+        return this.decodeCharacter(inputChar, 'd');
+    }
+
+    public char decodeCharacter(char inputChar, char rotationChar){
         char rotated;
-        //adicionando if para caracteres especiais
-        if(inputChar < 'A' || inputChar > 'z' || (inputChar > 'Z' && inputChar < 'a')){
+        //obtendo fator de rotacao
+        int rotationFactor = getRotationNumber(rotationChar);
+        //if para caracteres especiais
+        if(CharacterUtils.isSpecialCharacter(inputChar)){
             rotated = inputChar;
         }
         //adicionando if para letras maiusculas
         else if(inputChar <= 'Z'){
-            rotated =  (char) ((((inputChar - 'A') -3 + 26) %26) + 'A');
+            rotated =  (char) ((((inputChar - 'A') - rotationFactor + 26) %26) + 'A');
         }
         else{
-            rotated =  (char) ((((inputChar - 'a') -3 + 26) %26) + 'a');
+            rotated =  (char) ((((inputChar - 'a') - rotationFactor + 26) %26) + 'a');
         }
         return rotated;
     }

@@ -1,5 +1,13 @@
 # Processo de Desenvolvimento
 
+### Commit 17
+Agora, para finalizar Vigenère e o Rot falta apenas a etapa final: decifrar. Como vimos, decifrar corresponde a operação oposta a cifrar.
+Então, fazemos os testes e adicionamos as novas funções em `CharacterCoder`, `StringCoder`, `RotCypher` e `VigenereCypher`.
+Também complementamos a aplicação coms testes integrados básicos para as três classes que são pontos de entrada da biblioteca e movemos a `CesarCypher` para o pacote geral.
+Finalmente, adicionamos teste de rotação inválida na classe `CharacterCoder` para garantir coverage completa dos testes.
+Também adicionamos testes com chaves que incluem caracteres especiais em `StringCoder`.
+Feito tudo isso nossa biblioteca está basicamente completa!
+
 ### Commit 16
 Com o Rot feito, finalmente faremos nossa classe de `VigenereCypher`. Manteremos os mesmos passos de sempre, torcendo para não termos mais problemas nos testes :).
 Nesse caso, precisamos fazer mais uma correção: a chave não pode ser rotacionada quando os caracteres do texto são especiais.

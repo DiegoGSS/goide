@@ -12,7 +12,7 @@ class VigenereCypherTest extends Specification {
     }
 
     //testes basicos da api
-    def "Simple test of VigenereCypher"() {
+    def "Simple test of cypher of VigenereCypher"() {
         given:
         def original = 'rotation'
         def key = 'test'
@@ -28,8 +28,25 @@ class VigenereCypherTest extends Specification {
 
     }
 
-    //Demonstração do INTEGRADO para seu amigo
-    def "Integrated test of RotCypher, with number rotation input"() {
+    //testes basicos da api
+    def "Simple test of decypher of VigenereCypher"() {
+        given:
+        def original = 'ksltmmgg'
+        def key = 'test'
+        def expectedResult = 'rotation'
+
+        when:
+        vigenereCypher.setStringCoder(mockedStringCoder);
+        def output = vigenereCypher.decypherText(original, key);
+
+        then:
+        1 * mockedStringCoder.decodeString(original, key) >> expectedResult
+        output == expectedResult
+
+    }
+
+    //TESTES INTEGRADOS
+    def "Integrated test of cypher of VigenereCypher, with number rotation input"() {
         given:
         def original = 'Dark Souls'
         def key = 'MIDIR'
@@ -37,6 +54,20 @@ class VigenereCypherTest extends Specification {
 
         when:
         def output = vigenereCypher.cypherText(original, key)
+
+        then:
+        output == expected
+
+    }
+
+    def "Integrated test of decypher of VigenereCypher, with number rotation input"() {
+        given:
+        def original = 'PiUs JaCoA'
+        def key = 'MIDIR'
+        def expected = 'DaRk SoUlS'
+
+        when:
+        def output = vigenereCypher.decypherText(original, key)
 
         then:
         output == expected

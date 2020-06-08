@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import CesarCypher.CesarCypher;
 
 public class GoideConsoleApp {
 

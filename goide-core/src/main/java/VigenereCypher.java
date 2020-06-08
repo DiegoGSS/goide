@@ -12,6 +12,10 @@ public class VigenereCypher {
         return this.stringCoder.codeString(originalText, stringKey);
     }
 
+    public String decypherText(String originalText, String stringKey){
+        return this.stringCoder.decodeString(originalText, stringKey);
+    }
+
     public void setStringCoder(StringCoder stringCoder) {
         this.stringCoder = stringCoder;
     }

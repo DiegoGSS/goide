@@ -1,5 +1,3 @@
-package CesarCypher;
-
 import coreFunctions.StringCoder;
 
 public class CesarCypher {

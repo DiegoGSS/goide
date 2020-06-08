@@ -19,6 +19,17 @@ public class RotCypher {
         return this.stringCoder.codeString(originalText, keyString);
     }
 
+    public String decypherText(String originalText, int rotationNumber){
+
+        return this.decypherText(originalText, this.obtainRotationCharFromNumber(rotationNumber));
+    }
+
+    public String decypherText(String originalText, char rotationChar){
+        String keyString = "";
+        keyString += rotationChar;
+        return this.stringCoder.decodeString(originalText, keyString);
+    }
+
     private char obtainRotationCharFromNumber(int rotationNumber){
         char key;
         if(rotationNumber > -1){

@@ -1,4 +1,3 @@
-import CesarCypher.CesarCypher
 import coreFunctions.StringCoder
 import spock.lang.*
 
@@ -39,6 +38,35 @@ class CesarCypherTest extends Specification {
 
         then:
         1 * mockedStringCoder.decodeString(original) >> expected
+        output == expected
+
+    }
+
+    //TESTES INTEGRADOS
+    def "Integrated test of CesarCypher, to cypher test"() {
+        given:
+        def original = 'cesar'
+        def expected = 'fhvdu'
+
+        when:
+        CesarCypher integratedCypher = new CesarCypher();
+        def output = integratedCypher.cypherText(original);
+
+        then:
+        output == expected
+
+    }
+
+    def "Integrated test of CesarCypher to decypher test"() {
+        given:
+        def original = 'fhvdu'
+        def expected = 'cesar'
+
+        when:
+        CesarCypher integratedCypher = new CesarCypher();
+        def output = integratedCypher.decypherText(original);
+
+        then:
         output == expected
 
     }
