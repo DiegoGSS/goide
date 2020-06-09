@@ -1,3 +1,4 @@
+import MainCyphers.VigenereCypher
 import coreFunctions.StringCoder
 import spock.lang.Specification
 
@@ -12,7 +13,7 @@ class VigenereCypherTest extends Specification {
     }
 
     //testes basicos da api
-    def "Simple test of cypher of VigenereCypher"() {
+    def "Simple test of cypher of MainCyphers.VigenereCypher"() {
         given:
         def original = 'rotation'
         def key = 'test'
@@ -29,7 +30,7 @@ class VigenereCypherTest extends Specification {
     }
 
     //testes basicos da api
-    def "Simple test of decypher of VigenereCypher"() {
+    def "Simple test of decypher of MainCyphers.VigenereCypher"() {
         given:
         def original = 'ksltmmgg'
         def key = 'test'
@@ -46,7 +47,7 @@ class VigenereCypherTest extends Specification {
     }
 
     //TESTES INTEGRADOS
-    def "Integrated test of cypher of VigenereCypher, with number rotation input"() {
+    def "Integrated test of cypher of MainCyphers.VigenereCypher, with number rotation input"() {
         given:
         def original = 'Dark Souls'
         def key = 'MIDIR'
@@ -60,7 +61,7 @@ class VigenereCypherTest extends Specification {
 
     }
 
-    def "Integrated test of decypher of VigenereCypher, with number rotation input"() {
+    def "Integrated test of decypher of MainCyphers.VigenereCypher, with number rotation input"() {
         given:
         def original = 'PiUs JaCoA'
         def key = 'MIDIR'

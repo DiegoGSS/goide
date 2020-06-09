@@ -1,3 +1,4 @@
+import MainCyphers.RotCypher
 import coreFunctions.StringCoder;
 import spock.lang.Specification;
 
@@ -12,7 +13,7 @@ public class RotCypherTest extends Specification {
     }
 
     //testes basicos da api
-    def "Simple test of cypher of RotCypher, with number rotation input"() {
+    def "Simple test of cypher of MainCyphers.RotCypher, with number rotation input"() {
         given:
         def original = 'rotation'
         def rotationNumber = 4
@@ -29,7 +30,7 @@ public class RotCypherTest extends Specification {
 
     }
 
-    def "Simple test of cypher of RotCypher, with char rotation input"() {
+    def "Simple test of cypher of MainCyphers.RotCypher, with char rotation input"() {
         given:
         def original = 'dark souls'
         char rotationChar = 'f'
@@ -63,7 +64,7 @@ public class RotCypherTest extends Specification {
 
     }
 
-    def "Simple test of cypher of RotCypher, with invalid int rotation input"() {
+    def "Simple test of cypher of MainCyphers.RotCypher, with invalid int rotation input"() {
         given:
         def original = 'dark souls'
         int rotationNumber = -5
@@ -81,7 +82,7 @@ public class RotCypherTest extends Specification {
     }
 
     //testes basicos da api
-    def "Simple test of decypher of RotCypher, with number rotation input"() {
+    def "Simple test of decypher of MainCyphers.RotCypher, with number rotation input"() {
         given:
         def original = 'vsxexmsr'
         def rotationNumber = 4
@@ -98,7 +99,7 @@ public class RotCypherTest extends Specification {
 
     }
 
-    def "Simple test of decypher of RotCypher, with char rotation input"() {
+    def "Simple test of decypher of MainCyphers.RotCypher, with char rotation input"() {
         given:
         def original = 'ifwp xtzqx'
         char rotationChar = 'f'
@@ -115,7 +116,7 @@ public class RotCypherTest extends Specification {
 
     }
 
-    def "Simple test of decypher of RotCypher, with invalid char rotation input"() {
+    def "Simple test of decypher of MainCyphers.RotCypher, with invalid char rotation input"() {
         given:
         def original = 'dark souls'
         char rotationChar = ' '
@@ -132,7 +133,7 @@ public class RotCypherTest extends Specification {
 
     }
 
-    def "Simple test of decypher of RotCypher, with invalid int rotation input"() {
+    def "Simple test of decypher of MainCyphers.RotCypher, with invalid int rotation input"() {
         given:
         def original = 'dark souls'
         int rotationNumber = -5
@@ -150,7 +151,7 @@ public class RotCypherTest extends Specification {
     }
 
     //TESTES INTEGRADOS
-    def "Integrated test of cypher of RotCypher, with number rotation input"() {
+    def "Integrated test of cypher of MainCyphers.RotCypher, with number rotation input"() {
         given:
         def original = 'dark souls'
         int rotationNumber = 8
@@ -165,7 +166,7 @@ public class RotCypherTest extends Specification {
     }
 
     //Demonstraca o INTEGRADA para seu amigo
-    def "Integrated test of decypher of RotCypher, with number rotation input"() {
+    def "Integrated test of decypher of MainCyphers.RotCypher, with number rotation input"() {
         given:
         def original = 'lizs awcta'
         int rotationNumber = 8

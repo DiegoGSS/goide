@@ -1,5 +1,23 @@
 # Plano Testes Manuais
 
+### Testes Manuais 2: Testes básicos da Console Application com Cesar, Rot e Vigenère
+
+1. No modo **Cesar**, repetir os `Testes Manuais 1`.
+2. No modo **Rot**:
+- - Testar input de texto `cesar`, com rotação `9`. Resultado esperado: `lnbja`.
+- - Testar input de texto `Cesar, Rotacao.`, com rotação `L`. Resultado esperado: `Npdlc, Czelnlz.`.
+- - Testar input de texto especial ``¨&*(``, com rotação `H`. Resultado esperado: ``¨&*(``.
+- - Testar input de texto `cesar` com rotação inválida `%`. Resultado esperado: `cesar`.
+- - Testar input de texto `cesar` com rotação inválida `-80`. Resultado esperado: `cesar`.
+- - Testar os testes acima de forma reversa para decifrar.
+3. No modo **Vigenere**:
+- - Testar input de texto `vigenere`, com chave `chave`. Resultado esperado: `xpgzrgye`.
+- - Testar input de texto `Cesar, Rotacao.`, com chave `LaTa`. Resultado esperado: `Nelac, Rhtlcto.`.
+- - Testar input de texto especial ``¨&*(``, com chave `chavus`. Resultado esperado: ``¨&*(``.
+- - Testar input de texto `vigs` com chave inválida `%*()-)(_`. Resultado esperado: `vigs`.
+- - Testar input de texto `vigs` com chave com caractere especial `ces8`. Resultado esperado: `xmys`.
+- - Testar os testes acima de forma reversa para decifrar.
+
 ### Testes Manuais 1: Testes básicos da Console Application
 
 1. Testar input de texto `cesar`, já testado internamente. Resultado esperado: `fhvdu`.

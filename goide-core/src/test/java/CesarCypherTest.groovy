@@ -1,3 +1,4 @@
+import MainCyphers.CesarCypher
 import coreFunctions.StringCoder
 import spock.lang.*
 
@@ -13,7 +14,7 @@ class CesarCypherTest extends Specification {
     }
 
     //teste basico bem basico da api, agora usando mock e verdadeiramente unitario e de cypher
-    def "Simple test of CesarCypher, to cypher test"() {
+    def "Simple test of MainCyphers.CesarCypher, to cypher test"() {
         given:
         def original = 'cesar'
         def expected = 'fhvdu'
@@ -28,7 +29,7 @@ class CesarCypherTest extends Specification {
     }
 
     //teste basico bem basico da api, agora usando mock e verdadeiramente unitario
-    def "Simple test of CesarCypher to decypher test"() {
+    def "Simple test of MainCyphers.CesarCypher to decypher test"() {
         given:
         def original = 'fhvdu'
         def expected = 'cesar'
@@ -43,7 +44,7 @@ class CesarCypherTest extends Specification {
     }
 
     //TESTES INTEGRADOS
-    def "Integrated test of CesarCypher, to cypher test"() {
+    def "Integrated test of MainCyphers.CesarCypher, to cypher test"() {
         given:
         def original = 'cesar'
         def expected = 'fhvdu'
@@ -57,7 +58,7 @@ class CesarCypherTest extends Specification {
 
     }
 
-    def "Integrated test of CesarCypher to decypher test"() {
+    def "Integrated test of MainCyphers.CesarCypher to decypher test"() {
         given:
         def original = 'fhvdu'
         def expected = 'cesar'

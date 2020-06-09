@@ -1,15 +1,22 @@
 # Processo de Desenvolvimento
 
+### Commit 18
+Feita a biblioteca, é hora de colocar as novas cifras na nosso Console Application. Além disso, é uma boa oportunidade para melhorar este código.
+Nesse caso, criamos uma classe para a aplicação console de cada cifra, e deixamos a classe principal bem simples.
+Organizamos também nossos strings úteis em constantes.
+Finalmente, em termos de testes, os testes manuais vão dar ainda mais trabalho, mas ainda será a estratégia utilizada.
+Feito isso, nossa aplicação console está basicamente pronta.
+
 ### Commit 17
 Agora, para finalizar Vigenère e o Rot falta apenas a etapa final: decifrar. Como vimos, decifrar corresponde a operação oposta a cifrar.
-Então, fazemos os testes e adicionamos as novas funções em `CharacterCoder`, `StringCoder`, `RotCypher` e `VigenereCypher`.
-Também complementamos a aplicação coms testes integrados básicos para as três classes que são pontos de entrada da biblioteca e movemos a `CesarCypher` para o pacote geral.
+Então, fazemos os testes e adicionamos as novas funções em `CharacterCoder`, `StringCoder`, `MainCyphers.RotCypher` e `MainCyphers.VigenereCypher`.
+Também complementamos a aplicação coms testes integrados básicos para as três classes que são pontos de entrada da biblioteca e movemos a `MainCyphers.CesarCypher` para o pacote geral.
 Finalmente, adicionamos teste de rotação inválida na classe `CharacterCoder` para garantir coverage completa dos testes.
 Também adicionamos testes com chaves que incluem caracteres especiais em `StringCoder`.
 Feito tudo isso nossa biblioteca está basicamente completa!
 
 ### Commit 16
-Com o Rot feito, finalmente faremos nossa classe de `VigenereCypher`. Manteremos os mesmos passos de sempre, torcendo para não termos mais problemas nos testes :).
+Com o Rot feito, finalmente faremos nossa classe de `MainCyphers.VigenereCypher`. Manteremos os mesmos passos de sempre, torcendo para não termos mais problemas nos testes :).
 Nesse caso, precisamos fazer mais uma correção: a chave não pode ser rotacionada quando os caracteres do texto são especiais.
 Resolvendo isso os testes passam e finalizamos mais uma etapa.
 
@@ -24,7 +31,7 @@ Bom, está na hora de resolver os problemas:
 1. Corrigimos os testes errados na classe `CharacterCoderTest`.
 2. Corrigimos a classe `CharactedCoder`para que os testes passem.
 3. Repetimos o processo para a classe `StringCoder`.
-4. Repetimos o processo para a classe `RotCypher`.
+4. Repetimos o processo para a classe `MainCyphers.RotCypher`.
 Feito tudo isso, finalmente esta etapa está finalizada.
 
 ### Commit 14

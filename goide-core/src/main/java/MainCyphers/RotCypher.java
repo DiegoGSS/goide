@@ -1,3 +1,5 @@
+package MainCyphers;
+
 import coreFunctions.StringCoder;
 
 public class RotCypher {
