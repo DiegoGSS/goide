@@ -6,7 +6,7 @@ public final class CharacterUtils {
 
     }
 
-    public static boolean isSpecialCharacter(char testCharacter){
+    public static boolean isNotLetterCharacter(char testCharacter){
         if(testCharacter < 'A' || testCharacter > 'z' || (testCharacter > 'Z' && testCharacter < 'a')){
             return true;
         }

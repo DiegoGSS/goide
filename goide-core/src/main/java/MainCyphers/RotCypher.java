@@ -1,5 +1,6 @@
 package MainCyphers;
 
+import Utils.CypherStringUtils;
 import coreFunctions.StringCoder;
 
 public class RotCypher {
@@ -18,7 +19,8 @@ public class RotCypher {
     public String cypherText(String originalText, char rotationChar){
         String keyString = "";
         keyString += rotationChar;
-        return this.stringCoder.codeString(originalText, keyString);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.codeString(normalizedOriginalText, keyString);
     }
 
     public String decypherText(String originalText, int rotationNumber){
@@ -29,7 +31,8 @@ public class RotCypher {
     public String decypherText(String originalText, char rotationChar){
         String keyString = "";
         keyString += rotationChar;
-        return this.stringCoder.decodeString(originalText, keyString);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.decodeString(normalizedOriginalText, keyString);
     }
 
     private char obtainRotationCharFromNumber(int rotationNumber){

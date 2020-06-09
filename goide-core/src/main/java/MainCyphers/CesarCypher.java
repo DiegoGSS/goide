@@ -1,5 +1,6 @@
 package MainCyphers;
 
+import Utils.CypherStringUtils;
 import coreFunctions.StringCoder;
 
 public class CesarCypher {
@@ -11,11 +12,13 @@ public class CesarCypher {
     }
 
     public String cypherText(String originalText){
-        return this.stringCoder.codeString(originalText);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.codeString(normalizedOriginalText);
     }
 
     public String decypherText(String originalText){
-        return this.stringCoder.decodeString(originalText);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.decodeString(normalizedOriginalText);
     }
 
     public void setStringCoder(StringCoder stringCoder) {

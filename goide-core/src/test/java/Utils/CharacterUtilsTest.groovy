@@ -6,7 +6,7 @@ class CharacterUtilsTest extends Specification {
 
     def "Letras não devem ser reconhecidos como especiais"(){
         expect:
-        def result = CharacterUtils.isSpecialCharacter(character)
+        def result = CharacterUtils.isNotLetterCharacter(character)
         result == false;
 
         where:
@@ -22,7 +22,7 @@ class CharacterUtilsTest extends Specification {
 
     def "Caracteres especiais devem ser reconhecidos como especiais"(){
         expect:
-        def result = CharacterUtils.isSpecialCharacter(character)
+        def result = CharacterUtils.isNotLetterCharacter(character)
         result == true;
 
         where:

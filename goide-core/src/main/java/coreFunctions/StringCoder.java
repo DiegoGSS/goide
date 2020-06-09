@@ -35,7 +35,7 @@ public class StringCoder {
         BeautifulString inputBeautifulString = new BeautifulString(inputText);
         BeautifulString keyBeautifulString = new BeautifulString(key);
         while(!inputBeautifulString.hasLaps()){
-            if(CharacterUtils.isSpecialCharacter(inputBeautifulString.iterate())){
+            if(CharacterUtils.isNotLetterCharacter(inputBeautifulString.iterate())){
                 outputString+= this.characterCoder.codeCharacter(inputBeautifulString.getCurrentChar(), keyBeautifulString.getCurrentChar());
             }
             else{
@@ -51,7 +51,7 @@ public class StringCoder {
         BeautifulString inputBeautifulString = new BeautifulString(inputText);
         BeautifulString keyBeautifulString = new BeautifulString(key);
         while(!inputBeautifulString.hasLaps()){
-            if(CharacterUtils.isSpecialCharacter(inputBeautifulString.iterate())){
+            if(CharacterUtils.isNotLetterCharacter(inputBeautifulString.iterate())){
                 outputString+= this.characterCoder.decodeCharacter(inputBeautifulString.getCurrentChar(), keyBeautifulString.getCurrentChar());
             }
             else{

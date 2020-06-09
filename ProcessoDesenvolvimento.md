@@ -1,5 +1,13 @@
 # Processo de Desenvolvimento
 
+### Commit 19
+Aqui nesse commit faremos uma pequena e importante melhoria: adicionar uma normalização de texto(trocar caracteres como "ô" por "o") para permitir que nosso programa receba caracteres com acento.
+Fazemos testes para nossa classe e copiamos a implementação do Stack Overflow e seguimos a uma implementação em Java :).
+Aqui duas coisas legais ocorrem:
+1. Para garantir a consistência da classe Java, adicionamos testes relativos a normalização dos caracteres em português. Se precisarmos de mais normalizações, podemos adicionar os testes. Se eles começarem a falhar, podemos mudar a biblioteca.
+2. Como os testes são composable, não é necessário adicionar novos testes nas classes antigas.
+Feito tudo isso, fazemos alguns testes com textos com acentos na aplicação console e garantimos a melhoria.
+
 ### Commit 18
 Feita a biblioteca, é hora de colocar as novas cifras na nosso Console Application. Além disso, é uma boa oportunidade para melhorar este código.
 Nesse caso, criamos uma classe para a aplicação console de cada cifra, e deixamos a classe principal bem simples.

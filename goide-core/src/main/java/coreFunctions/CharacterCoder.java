@@ -17,7 +17,7 @@ public class CharacterCoder {
         //obtendo fator de rotacao
         int rotationFactor = getRotationNumber(rotationChar);
         //adicionando if para caracteres especiais
-        if(CharacterUtils.isSpecialCharacter(inputChar)){
+        if(CharacterUtils.isNotLetterCharacter(inputChar)){
             rotated = inputChar;
         }
         //adicionando if para letras maiusculas
@@ -42,7 +42,7 @@ public class CharacterCoder {
         //obtendo fator de rotacao
         int rotationFactor = getRotationNumber(rotationChar);
         //if para caracteres especiais
-        if(CharacterUtils.isSpecialCharacter(inputChar)){
+        if(CharacterUtils.isNotLetterCharacter(inputChar)){
             rotated = inputChar;
         }
         //adicionando if para letras maiusculas

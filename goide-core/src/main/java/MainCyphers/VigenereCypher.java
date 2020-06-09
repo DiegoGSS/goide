@@ -1,5 +1,6 @@
 package MainCyphers;
 
+import Utils.CypherStringUtils;
 import coreFunctions.StringCoder;
 
 public class VigenereCypher {
@@ -11,11 +12,13 @@ public class VigenereCypher {
     }
 
     public String cypherText(String originalText, String stringKey){
-        return this.stringCoder.codeString(originalText, stringKey);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.codeString(normalizedOriginalText, stringKey);
     }
 
     public String decypherText(String originalText, String stringKey){
-        return this.stringCoder.decodeString(originalText, stringKey);
+        String normalizedOriginalText = CypherStringUtils.deAccent(originalText);
+        return this.stringCoder.decodeString(normalizedOriginalText, stringKey);
     }
 
     public void setStringCoder(StringCoder stringCoder) {
