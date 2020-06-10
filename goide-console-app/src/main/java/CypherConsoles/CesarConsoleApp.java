@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class CesarConsoleApp {
 
     private Scanner scanner;
+    private BasicConsoleApp basicConsoleApp;
     private CesarCypher cesarCypher = new CesarCypher();
 
     public CesarConsoleApp(Scanner scanner){
+        this.basicConsoleApp = new BasicConsoleApp(scanner);
         this.setScanner(scanner);
     }
 
@@ -29,26 +31,50 @@ public class CesarConsoleApp {
             else if(mode == 2){
                 decypherText();
             }
+            if(mode == 3){
+                cypherTextFile();
+            }
+            else if(mode == 4){
+                decypherTextFile();
+            }
             else{
                 System.out.println(ConsoleStrings.TRY_AGAIN);
             }
-        }while(mode < 1 && mode > 3);
+        }while(mode < 1 && mode > 5);
     }
 
     private void cypherText(){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = cesarCypher.cypherText(input);
-        System.out.println(ConsoleStrings.CYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printCypherResults(output);
     }
 
     private void decypherText(){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = cesarCypher.decypherText(input);
-        System.out.println(ConsoleStrings.DECYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printDecypherResults(output);
+    }
+
+    private void cypherTextFile(){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = cesarCypher.cypherText(input);
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\cesarcifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
+    }
+
+    private void decypherTextFile(){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = cesarCypher.decypherText(input);
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\cesardecifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
     }
 
     public void setScanner(Scanner scanner) {

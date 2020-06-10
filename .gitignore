@@ -18,6 +18,8 @@ target/*
 goide-console-app/target/*
 goide-core/target/*
 
+text-files/
+
 # Created by https://www.gitignore.io/api/intellij
 
 ### Intellij ###

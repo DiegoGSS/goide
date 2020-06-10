@@ -1,5 +1,11 @@
 # Processo de Desenvolvimento
 
+### Commit 20
+Neste commit, implementamos nossa funcionalidade final do Problema 1: a cifração e decifração com arquivos de texto como input e output.
+Colocamos essa funcionalidade em uma nova classe, adicionamos o uso delas em nossas classes de ConsoleApp e encapsulamos a parte encapsulável da lógica delas em uma classe básica.
+Repetimos aqui os testes manuais da última etapa usando arquivos de texto.
+E, não nos preocupamos muito com os casos de exceção já que nossa Console Application é bem básica e feita para uso rápido da biblioteca. Se um dia fizermos uma API robusta, será necessário fazer uma aplicação tolerante a falhas que usa a biblioteca e apresenta boa interface de usuário.
+
 ### Commit 19
 Aqui nesse commit faremos uma pequena e importante melhoria: adicionar uma normalização de texto(trocar caracteres como "ô" por "o") para permitir que nosso programa receba caracteres com acento.
 Fazemos testes para nossa classe e copiamos a implementação do Stack Overflow e seguimos a uma implementação em Java :).

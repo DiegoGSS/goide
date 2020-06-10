@@ -8,9 +8,12 @@ import java.util.Scanner;
 public class RotConsoleApp {
 
     private Scanner scanner;
+    private BasicConsoleApp basicConsoleApp;
     private RotCypher rotCypher = new RotCypher();
 
     public RotConsoleApp(Scanner scanner){
+
+        this.basicConsoleApp = new BasicConsoleApp(scanner);
         this.setScanner(scanner);
     }
 
@@ -31,10 +34,18 @@ public class RotConsoleApp {
                 int rotationFactor = getRotationFactor();
                 decypherText(rotationFactor);
             }
+            else if(mode == 3){
+                int rotationFactor = getRotationFactor();
+                cypherTextFile(rotationFactor);
+            }
+            else if(mode == 4){
+                int rotationFactor = getRotationFactor();
+                decypherTextFile(rotationFactor);
+            }
             else{
                 System.out.println(ConsoleStrings.TRY_AGAIN);
             }
-        }while(mode < 1 && mode > 3);
+        }while(mode < 1 && mode > 5);
     }
 
     private int getRotationFactor(){
@@ -46,19 +57,37 @@ public class RotConsoleApp {
 
 
     private void cypherText(int rotationFactor){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = rotCypher.cypherText(input, rotationFactor + 'a');
-        System.out.println(ConsoleStrings.CYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printCypherResults(output);
     }
 
     private void decypherText(int rotationFactor){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = rotCypher.decypherText(input, rotationFactor + 'a');
-        System.out.println(ConsoleStrings.DECYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printDecypherResults(output);
+    }
+
+    private void cypherTextFile(int rotationFactor){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = rotCypher.cypherText(input, rotationFactor + 'a');
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\rotcifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
+    }
+
+    private void decypherTextFile(int rotationFactor){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = rotCypher.decypherText(input, rotationFactor + 'a');
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\rotdecifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
     }
 
     public void setScanner(Scanner scanner) {

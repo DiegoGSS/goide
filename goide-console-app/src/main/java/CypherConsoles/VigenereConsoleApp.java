@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class VigenereConsoleApp {
 
     private Scanner scanner;
+    private BasicConsoleApp basicConsoleApp;
     private VigenereCypher vigenereCypher = new VigenereCypher();
 
     public VigenereConsoleApp(Scanner scanner){
+        this.basicConsoleApp = new BasicConsoleApp(scanner);
         this.setScanner(scanner);
     }
 
@@ -31,10 +33,18 @@ public class VigenereConsoleApp {
                 String rotationFactor = getRotationFactor();
                 decypherText(rotationFactor);
             }
+            else if(mode == 3){
+                String rotationFactor = getRotationFactor();
+                cypherTextFile(rotationFactor);
+            }
+            else if(mode == 4){
+                String rotationFactor = getRotationFactor();
+                decypherTextFile(rotationFactor);
+            }
             else{
                 System.out.println(ConsoleStrings.TRY_AGAIN);
             }
-        }while(mode < 1 && mode > 3);
+        }while(mode < 1 && mode > 5);
     }
 
     private String getRotationFactor(){
@@ -46,19 +56,37 @@ public class VigenereConsoleApp {
 
 
     private void cypherText(String rotationFactor){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = vigenereCypher.cypherText(input, rotationFactor);
-        System.out.println(ConsoleStrings.CYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printCypherResults(output);
     }
 
     private void decypherText(String rotationFactor){
-        System.out.println(ConsoleStrings.TYPE_TEXT);
-        String input = this.scanner.nextLine();
+        String input = this.basicConsoleApp.getInputText();
 
         String output = vigenereCypher.decypherText(input, rotationFactor);
-        System.out.println(ConsoleStrings.DECYPHERED_TEXT + output);
+
+        this.basicConsoleApp.printDecypherResults(output);
+    }
+
+    private void cypherTextFile(String rotationFactor){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = vigenereCypher.cypherText(input, rotationFactor);
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\vigenerecifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
+    }
+
+    private void decypherTextFile(String rotationFactor){
+        String input = this.basicConsoleApp.getInputTextFromFile();
+
+        String output = vigenereCypher.decypherText(input, rotationFactor);
+
+        String filePath = "C:\\repositorio\\goide\\text-files\\vigeneredecifrado.txt";
+        this.basicConsoleApp.printResultsFile(filePath, output);
     }
 
     public void setScanner(Scanner scanner) {

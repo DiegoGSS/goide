@@ -1,5 +1,8 @@
 # Plano Testes Manuais
 
+### Testes Manuais 3: Testes com arquivos de texto
+- Repetimos o `Testes Manuais 2` utilizando arquivos de texto.
+
 ### Testes Manuais 2: Testes básicos da Console Application com Cesar, Rot e Vigenère
 
 1. No modo **Cesar**, repetir os `Testes Manuais 1`.

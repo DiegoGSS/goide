@@ -33,7 +33,7 @@ public class GoideConsoleApp {
                 vigenereConsoleApp.run();
             }
             else{
-                System.out.println(ConsoleStrings.SELECT_CYPHER_OR_DECYPHER);
+                System.out.println(ConsoleStrings.TRY_AGAIN);
             }
         }while(cypher < 1 && cypher > 4);
     }
