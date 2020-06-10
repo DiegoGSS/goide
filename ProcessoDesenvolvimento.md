@@ -1,5 +1,8 @@
 # Processo de Desenvolvimento
 
+### Commit 21
+Arrumando o Readme e postando no GitHub \o/.
+
 ### Commit 20
 Neste commit, implementamos nossa funcionalidade final do Problema 1: a cifração e decifração com arquivos de texto como input e output.
 Colocamos essa funcionalidade em uma nova classe, adicionamos o uso delas em nossas classes de ConsoleApp e encapsulamos a parte encapsulável da lógica delas em uma classe básica.
