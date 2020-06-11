@@ -1,11 +1,15 @@
 # Processo de Desenvolvimento
 
+### Commit 25
+Ajustes dos textos do repositório.
+
 ### Commit 21
 Arrumando o Readme e postando no GitHub \o/.
 
 ### Commit 20
 Neste commit, implementamos nossa funcionalidade final do Problema 1: a cifração e decifração com arquivos de texto como input e output.
 Colocamos essa funcionalidade em uma nova classe, adicionamos o uso delas em nossas classes de ConsoleApp e encapsulamos a parte encapsulável da lógica delas em uma classe básica.
+
 Repetimos aqui os testes manuais da última etapa usando arquivos de texto.
 E, não nos preocupamos muito com os casos de exceção já que nossa Console Application é bem básica e feita para uso rápido da biblioteca. Se um dia fizermos uma API robusta, será necessário fazer uma aplicação tolerante a falhas que usa a biblioteca e apresenta boa interface de usuário.
 
@@ -41,6 +45,7 @@ Resolvendo isso os testes passam e finalizamos mais uma etapa.
 Agora, devemos criar uma classe pré Vigènere que permite a rotação de um texto por 'n' caracteres. Como sempre, começamos pelo teste, implementamos a classe e fazemos com que os testes passem. E, como no caso da `CesarCypherTest`, fazemos os mocks para testar a API sem retestar a aplicação.
 Fazemos também um teste integrado simples, como demonstração e para garantir de forma simples todo o fluxo.
 MAS OH NÃO, ALGO DEU ERRADO. O resultado esperado não corresponde ao obtido. O que pode ter dado errado?
+
 Se observarmos bem, veremos que o problema é que estamos considerando o 'a' como rotação de valor 1, quando na verdade o 'a' significa rotação 0.
 E por que esse erro chegou até aqui? Simples, os testes estavam errados.
 **Aqui fica uma lição essencial do TDD: o centro do desenvolvimento fica nos testes. Portanto, eles devem ser feitos com muito cuidado e validados em si. Erros nos testes acarretam quase que necessariamente em erro na aplicação.**
@@ -88,6 +93,7 @@ Agora finalmente começaremos a funcionalidade de decifrar. Como sempre, começa
 
 ### Commit 10
 Agora, feita a primeira entrega chegou o momento ideal de implementar a outra funcionalidade da cifra de Cesar a de descriptografar!... ou seria o momento ideal, caso não fosse detectado um débito técnico no código. Nesse commit resolveremos esse débito para ficarmos mais prontos para a implementação da nova funcionalidade.
+
 Basicamente o teste da classe `CesarCypherTest` não é unitário e sim integrado. Isso não parece muito problemático, pois o sistema é pequeno, mas se o teste envolvesse mais de 10 classes os efeitos seriam sentidos. O ideal nesse caso é fazer um teste unitário que apenas garante que a classe chama corretamente as funções utilizadas e que ela sabe lidar com seus resultados. Isso pode se tornar mais interessante caso no futuro essa função além de chamar as funções internas, processe os textos por exemplo.
 Fazemos o teste, uma pequena alteração na classe para permitir os testes com mock e sucesso!
 
@@ -107,7 +113,10 @@ Então, vamos ao trabalho!
 4. Com tudo feito, executaremos os testes manuais para garantir que eles resultam em sucesso.
 
 ### Commit 8
-Novamente você está feliz tomando seu café na firma falando sobre seu novo programa. E as pessoas gostam tanto que você faz uma demonstração em sua mesa. Logo seu amigo sugere o texto: `Hello World`. Mais simples impossível você pensa. Eis que você roda seu código e consegue o resultado: `Khoor=Zruog`. OH NÃO, DEU ERRADO. Risadas de um lado, frustração de outro, o programa quase funcionou. Mas claro, você deve ter percebido, você esqueceu de testar os caracteres especiais!  E como resolver isso? Claro, mais testes.
+Novamente você está feliz tomando seu café na firma falando sobre seu novo programa. E as pessoas gostam tanto que você faz uma demonstração em sua mesa. Logo seu amigo sugere o texto: `Hello World`. Mais simples impossível você pensa. Eis que você roda seu código e consegue o resultado: `Khoor=Zruog`. OH NÃO, DEU ERRADO. 
+
+Risadas de um lado, frustração de outro, o programa quase funcionou. Mas claro, você deve ter percebido, você esqueceu de testar os caracteres especiais!  E como resolver isso? Claro, mais testes.
+
 Nesse caso, é bom pesquisar a tabela ASCII para entender melhor como funciona a codificação de caracteres em números. Feito isso, é importante elaborar um teste com alguns exemplos, que contemple caracteres especiais que vem antes e depois das letras na tabela e também entre as maiúsculas e minúsculas; a princípio não é necessário testar *todos* os caracteres.
 Novamente, primeiro montamos o teste na classe "CharacterCoderTest", com 2 exemplos de cada região onde não há letras na tabela.
 Em seguida, alteramos o código da classe para contemplar os caracteres especiais. Mudanças em ifs são sempre sensíveis e muito propícias a erros, mas aqui podemos fazer as alterações com confiança, pois nossos testes cobrem os casos de sucesso anteriores.
@@ -124,7 +133,7 @@ E, finalmente, como nosso teste da API é preliminar, podemos, por hora, testar 
 ### Commit 6
 Finalmente, com nossa função de rotação robusta vamos fazer uma função que consiga montar um texto cifrado!
 Primeiro, faremos um teste adequado. No primeiro momento vamos utilizar outra classe, já que definimos a nossa classe inicial como um manipulador de caracteres.
-coreFunctions.StringCoderTest é a nossa classe de testes e usamos apenas um texto simples `cesar` que deve ser transformado em `fhvdu`. O teste basicamente verifica o funcionamento correto do for e que a função "coreFunctions.CharacterCoder.characterRotator" é chamada corretamente.
+coreFunctions.StringCoderTest é a nossa classe de testes e usamos apenas um texto simples `cesar` que deve ser transformado em `fhvdu`. O teste basicamente verifica o funcionamento correto do for e que a função `coreFunctions.CharacterCoder.characterRotator` é chamada corretamente.
 Após fazer o teste e a classe, vemos que o teste passa.
 Se rodarmos uma ferramente de Code Coverage (como a do IntelliJ), veremos que estamos com cobertura de 100%, um bom sinal de que os testes estão indo bem.
 
@@ -144,9 +153,9 @@ Após a alteração (em caso de dúvidas, consultar as fontes sobre a cifra) os 
 
 ### Commit 3
 Criação do projeto em Java com testes em groovy (utilizando o framework Spock).
-Com o design estratégico elaborado, devemos começar a implementação elaborando nosso primeiro teste!
-Começaremos pelo problema mais simples (cifra de César), pelo ponto mais básico dela (rotação de um caractere por 3 posições).
-E, finalmente, faremos o teste mais simples possível para começar: nossa função deve receber um caractere 'a' e retornar um 'd'.
+Com o design estratégico elaborado, devemos começar a implementação elaborando nosso primeiro teste! 
+Começaremos pelo problema mais simples (cifra de César), pelo ponto mais básico dela (rotação de um caractere por 3 posições). 
+E, finalmente, faremos o teste mais simples possível para começar: nossa função deve receber um caractere 'a' e retornar um 'd'. 
 O teste parece básico demais, mas é a melhor forma de começarmos. 
 Prmeiro fazemos o teste e deixamos ele falhar, classe: `coreFunctions.CharacterCoderTest.groovy`.
 Depois elaboramos a classe e a função do teste: `coreFunctions.CharacterCoder.java`.

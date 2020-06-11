@@ -1,6 +1,6 @@
 # GOIDE (Great Original and Ingenious Decypherer Extreme)
 
-Bem vindo ao projeto da GOIDE (Great Original and Ingenious Decypherer Extreme - em português: Grande Original e Inovador Decifrador Extremo), um projeto de um decifrador de vários tipos de cifras desenvolvido utilizando TDD feito para ser um guia e demonstração esta técnica de desenvolvimento de software.
+Bem vindo ao projeto da GOIDE (Great Original and Ingenious Decypherer Extreme - em português: Grande Original e Inovador Decifrador Extremo), um projeto de um decifrador de vários tipos de cifras desenvolvido utilizando [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) feito para ser um guia e demonstração esta técnica de desenvolvimento de software.
 
 O processo de desenvolvimento encontra-se no arquivo ProcessoDesenvolvimento.md atualizado a cada commit.
 
@@ -15,7 +15,7 @@ Usar este repositório para aprender sobre TDD é muito fácil:
 
 #### *Mapa de problemas e commits
 - **Problema 1:** Commits 1 ao 20.
-- **Setting do repositório**: Commit 21.
+- **Setting e ajustes do repositório**: Commits 21 ao 25.
 
 ### Como usar este repositório para codificar e decodificar cifras:
 
